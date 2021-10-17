@@ -59,6 +59,25 @@ public class AdventureController {
         return "redirect:/";
     }
 
+    @GetMapping("/Gocart")
+    public String renderGocart() {
+        return "gocart.html";
+    }
+
+    @GetMapping("/Sumowrestling")
+    public String renderSumo() {
+        return "sumo.html";
+    }
+
+    @GetMapping("/Paintball")
+    public String renderPaintball() {
+        return "paintball.html";
+    }
+
+    @GetMapping("/Minigolf")
+    public String renderMinigolf() {
+        return "minigolf.html";
+    }
 
     @GetMapping("/test")
     public String renderTest(Model model) {
