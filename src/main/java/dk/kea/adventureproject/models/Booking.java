@@ -2,7 +2,7 @@ package dk.kea.adventureproject.models;
 
 import java.util.Date;
 /**
- * @author Daniel og Hans
+ * @author Daniel & Hans
  */
 
 public class Booking {
