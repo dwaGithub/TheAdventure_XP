@@ -29,7 +29,7 @@ public class BookingController {
     public String createBookingByID(@PathVariable int activityID, Model model){
         model.addAttribute("activityID", activityID);
         System.out.println(activityID);
-        return "/createBooking";
+        return "createBooking.html";
     }
 
     @PostMapping("/createBooking")
@@ -50,7 +50,7 @@ public class BookingController {
     @GetMapping("/updateBooking/{bookingID}")
     public String updateBooking(@PathVariable int bookingID, Model model) {
         model.addAttribute("booking", bookingService.findBookingById(bookingID));
-        return "/updateBooking";
+        return "updateBooking.html";
     }
 
     @PostMapping("/updateBooking")
@@ -64,7 +64,7 @@ public class BookingController {
     public String searchBooking(Model model) {
         List<SearchBooking> bookingList = bookingService.searchBooking("","","","","","", "","","");
         model.addAttribute("bookingList", bookingList);
-      return "/searchBooking";
+      return "searchBooking.html";
     }
 
     @PostMapping("/searchBooking")
@@ -81,7 +81,7 @@ public class BookingController {
     List<SearchBooking> bookingList = bookingService.searchBooking(bookingID, activityID,
     activityName, employeeName, customerName, customerPhoneNumber, startDate, dateFrom, dateTo);
     model.addAttribute("bookingList", bookingList);
-    return "/searchBooking";
+    return "searchBooking.html";
     }
 
     @GetMapping("/deleteBooking/{bookingID}")

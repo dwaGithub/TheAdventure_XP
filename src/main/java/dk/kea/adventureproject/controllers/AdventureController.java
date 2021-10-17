@@ -27,12 +27,12 @@ public class AdventureController {
     @GetMapping("/activityDetails/{activityID}")
     public String readActivityDetails(@PathVariable int activityID, Model model){
         model.addAttribute("activity", activityService.readActivityByID(activityID));
-        return "/activityDetails";
+        return "activityDetails.html";
     }
 
     @GetMapping("/createActivity")
     public String createActivity() {
-        return "/createActivity";
+        return "createActivity.html";
     }
 
     @PostMapping("/createActivity")
@@ -44,7 +44,7 @@ public class AdventureController {
     @GetMapping("/updateActivity/{activityID}")
     public String updateActivity(@PathVariable("activityID") int activityID, Model model) {
         model.addAttribute("activity", activityService.readActivityByID(activityID));
-        return "/updateActivity";
+        return "updateActivity.html";
     }
 
     @PostMapping("/updateActivity")
@@ -59,30 +59,4 @@ public class AdventureController {
         return "redirect:/";
     }
 
-    @GetMapping("/Gocart")
-    public String renderGocart() {
-        return "gocart.html";
-    }
-
-    @GetMapping("/Sumowrestling")
-    public String renderSumo() {
-        return "sumo.html";
-    }
-
-    @GetMapping("/Paintball")
-    public String renderPaintball() {
-        return "paintball.html";
-    }
-
-    @GetMapping("/Minigolf")
-    public String renderMinigolf() {
-        return "minigolf.html";
-    }
-
-    @GetMapping("/test")
-    public String renderTest(Model model) {
-        List<Activity> list = activityService.readAllActivities();
-        model.addAttribute("list", list);
-        return "test.html";
-    }
 }
